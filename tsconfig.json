@@ -4,9 +4,13 @@
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
+    "outDir": "dist",
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "server.ts"],
   "exclude": ["coverage", "dist", "log", "__test__"] // 排除檢查的 
 }
