@@ -5,7 +5,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", async (req: Request, res: Response) => {
-    res.send("hello corgi");
+  res.send("hello corgi");
 });
 
 export default app;
