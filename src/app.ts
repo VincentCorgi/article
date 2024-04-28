@@ -1,4 +1,5 @@
-import express, { Express, NextFunction, Request, Response } from "express";
+import express, { Express, Request, Response, NextFunction } from "express";
+import routes from "./routes";
 const app: Express = express();
 const logger =
     (req: Request, res: Response, next: NextFunction) => {
@@ -16,7 +17,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger);
 
 app.get("/", async (req: Request, res: Response) => {
-  res.send("hello corgi");
+  res.send("hello world");
 });
+// routes
+routes(app);
 
 export default app;
