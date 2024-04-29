@@ -1,17 +1,19 @@
 import { Router } from "express";
 import {
   addCorgiHandler,
-  deleteCorgiHandler,
+  getAllCorgiHandler,
   getCorgiByIdHandler,
-  getCorgisHandler,
-  updateCorgiHandler,
 } from "../controller/corgi.controller";
+import requestValidate from "../util/middleware/requestValidator";
+import { addCorgiSchema, getCorgiByIdSchema } from "../schema/corgi.schema";
 const router = Router();
 
-router.post("/", addCorgiHandler);
-router.get("/:corgiId", getCorgiByIdHandler);
-router.get("/", getCorgisHandler);
-router.patch("/:corgiId", updateCorgiHandler);
-router.delete("/:corgiId", deleteCorgiHandler);
+router.post("/", [requestValidate(addCorgiSchema)], addCorgiHandler);
+router.get(
+  "/:corgiId",
+  [requestValidate(getCorgiByIdSchema)],
+  getCorgiByIdHandler
+);
+router.get("/", getAllCorgiHandler);
 
 export default router;
