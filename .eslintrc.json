@@ -22,20 +22,10 @@
   ],
   "rules": {
     "semi": "error",
-    "indent": ["error", 2],
     "quotes": ["error", "double"],
     "no-multiple-empty-lines": ["error", { "max": 99999, "maxEOF": 0 }],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-var-requires": "error"
-    // "object-curly-newline": [
-    //   "error",
-    //   {
-    //     "ObjectExpression": { "multiline": true, "minProperties": 3 }, // 表達式 object 大於 3 個要多行
-    //     "ObjectPattern": { "multiline": true, "minProperties": 3 }, // 解構 object 大於 3 個要多行
-    //     "ImportDeclaration": "never", // import 要一行
-    //     "ExportDeclaration": { "multiline": true, "minProperties": 3 } // export 大於三個要多行
-    //   }
-    // ]
   },
   "overrides": [
     {
